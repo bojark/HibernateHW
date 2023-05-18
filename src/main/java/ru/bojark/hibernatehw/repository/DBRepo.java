@@ -13,11 +13,11 @@ public class DBRepo {
     @PersistenceContext
     EntityManager entityManager;
     public List<Person> extractPersons(String city){
-        List<Person> persons = new ArrayList<>();
 
-//        Person person = entityManager.find(Person.class, city);
-//        System.out.println(person);
+        List<Person> resultCity = entityManager.createQuery(
+                        "select c from Person c where c.cityOfLiving = :city_of_living order by c.surname")
+                .setParameter("city_of_living", city);
 
-        return persons;
+        return resultCity;
     }
 }

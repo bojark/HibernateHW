@@ -10,7 +10,7 @@ public class GetController {
     PersonSearchService pss;
     public GetController(PersonSearchService pss){this.pss = pss;}
 
-    @GetMapping("/products/fetch-product")
+    @GetMapping("/persons/by-city")
     public String getPersons(@RequestParam("city") String city){
         return pss.findPersons(city);
     }

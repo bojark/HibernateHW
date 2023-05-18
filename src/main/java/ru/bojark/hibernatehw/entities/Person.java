@@ -1,9 +1,6 @@
 package ru.bojark.hibernatehw.entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
@@ -13,6 +10,7 @@ import java.util.Objects;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "persons", schema = "netology")
+@IdClass(PersonID.class)
 public class Person {
     @Id
     private String name;
