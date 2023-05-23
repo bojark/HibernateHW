@@ -14,10 +14,9 @@ public class DBRepo {
     EntityManager entityManager;
     public List<Person> extractPersons(String city){
 
-        List<Person> resultCity = entityManager.createQuery(
-                        "select c from Person c where c.cityOfLiving = :city_of_living order by c.surname")
-                .setParameter("city_of_living", city);
-
-        return resultCity;
+        return entityManager.createQuery(
+                        "select c from Person c where c.cityOfLiving = :city_of_living order by c.surname", Person.class)
+                .setParameter("city_of_living", city)
+                .getResultList();
     }
 }
