@@ -1,5 +1,6 @@
 package ru.bojark.hibernatehw.entities;
 
+import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
@@ -20,7 +21,7 @@ public class Person {
     private int age;
 
     @Column(name="phone_number")
-    private long phoneNumber;
+    private Long phoneNumber;
 
     @Column(name="city_of_living")
     private String cityOfLiving;
@@ -49,7 +50,7 @@ public class Person {
         this.age = age;
     }
 
-    public long getPhoneNumber() {
+    public Long getPhoneNumber() {
         return phoneNumber;
     }
 
